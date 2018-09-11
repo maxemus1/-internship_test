@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding:0;
+    border: 0;
+}
+.smpl-form {
+    margin: 10px;
+    width: 210px;
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #d4d4d4;
+}
+.smpl-form *:focus{
+    outline: 0;
+}
+
+.smpl-form label {
+    display: block;
+    font-weight: 100;
+    font-size: 13px;
+    margin-top: 10px;
+    color: #454545;
+    margin-bottom: 2px;
+}
+.smpl-form input, .smpl-form textarea{
+    display: block;
+    padding: 9px;
+    border: 1px solid #d4d4d4;
+    width: 190px;
+    font-size: 14px;
+}
+.smpl-form textarea{
+    height: 70px;
+}
+
+.smpl-form input.button {
+    border: 0;
+    background-color: #21449b;
+    margin-top: 20px;
+    color: white;
+    border-radius: 4px;
+    width: 210px;
+}
