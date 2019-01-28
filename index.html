@@ -2,24 +2,25 @@
 <html>
 <head>
     <link href="media/css/form.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/js/form.js"></script>
 </head>
 <body>
 <div class="smpl-form">
     <form method="POST" action="SaveTable.php">
         <label>Last name</label>
-        <input name="last_name">
+        <input type="text" name="last_name">
 
         <label>First name</label>
-        <input name="first_name">
+        <input type="text" name="first_name">
 
         <label>Middle name</label>
-        <input name="middle_name">
+        <input type="text" name="middle_name">
 
         <label>Phone</label>
-        <input name="phone">
+        <input type="number" name="phone">
 
         <label>Email</label>
-        <input name="email">
+        <input type="email" name="email">
 
         <label>Comments</label>
         <textarea name="comments"></textarea>
@@ -28,7 +29,7 @@
         <textarea name="tags"></textarea>
 
         <label>City</label>
-        <input name="city">
+        <input type="text" name="city">
 
         <input type="submit" value="Send form" class="button">
     </form>
