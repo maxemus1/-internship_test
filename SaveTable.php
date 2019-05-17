@@ -21,15 +21,7 @@ if (!empty($errors)) {
     http_response_code(200);
 }
 **/
-
-//$text= json_decode($_POST['json'], true);
-$text=implode($_POST);
-// открываем файл, если файл не существует,
-//делается попытка создать его
+$text= var_export(json_decode($_POST['json']), true);
 $fp = fopen("file.txt", "w");
-
-// записываем в файл текст
 fwrite($fp, $text);
-
-// закрываем
 fclose($fp);

@@ -11,13 +11,14 @@ $(document).ready(function () {
 function sendAjaxForm(resultForm, contactForm, url) {
 
 
+    var data = JSON.stringify($("#" + contactForm).serializeArray());
 
     $.ajax({
         url: url, //url страницы (SaveTable.php)
         type: "POST", //метод отправки
         dataType: "json", //формат данных
        // data: $("#" + contactForm).serialize(),  // Сеарилизуем объект
-        data:{json: JSON.stringify($("#" + contactForm).serializeArray())},
+        data:{json: data},
         success: function (response) { //Данные отправлены успешно
             $("#" + resultForm).html('Данные успешно отправленны');
             $("#" + contactForm)[0].reset();//Очистка формы
