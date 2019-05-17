@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="media/css/form.css" rel="stylesheet" type="text/css"/>
+    <link href="css/form.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/form.js"></script>
 </head>
 <body>
 <div class="form">
-    <form method="POST" action="SaveTable.php">
-        <label For="last_name">Last name</label>
-        <input type="text" id="last_name" name="last_name">
+    <form method="post" id="contactForm">
+        <label For="last_name">Фамилия</label>
+        <input type="text" id="last_name" name="last_name" class="required" placeholder="">
 
-        <label For="first_name">First name</label>
-        <input type="text" id="first_name" name="first_name">
+        <label For="first_name">Имя</label>
+        <input type="text" id="first_name" name="first_name" class="required">
 
-        <label For="middle_name">Middle name</label>
-        <input type="text" id="middle_name" name="middle_name">
+        <label For="middle_name">Отчество</label>
+        <input type="text" id="middle_name" name="middle_name" class="required">
 
-        <label For="phone">Phone</label>
-        <input type="text" id="phone" name="phone">
+        <label For="phone">Телефон</label>
+        <input type="text" id="phone" name="phone" class="required">
 
         <label For="email">Email</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" class="required">
+        
+        <label For="city">Город</label>
+        <input type="text" id="city" name="city" class="required">
 
-        <label For="comments">Comments</label>
+        <label For="comments">Коментарий</label>
         <textarea name="comments" id="comments"></textarea>
 
-        <label For="tags">Tags</label>
-        <textarea name="tags" id="tags"></textarea>
-
-        <label For="city">City</label>
-        <input type="text" id="city" name="city">
-
-        <input type="submit" value="Отправить" class="button">
+        <input type="submit" id="butSubmit" value="Отправить" class="button">
     </form>
 </div>
+<div id="resultForm"></div>
+
 </body>
+
 </html>

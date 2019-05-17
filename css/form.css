@@ -59,7 +59,7 @@ body{
 }
 
 .form input.button {
-    display:block
+    display:block;
     border: none;
     margin: 10px auto;
     padding:10px 30px;
@@ -70,4 +70,12 @@ body{
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     text-shadow:0 0.3px 0.3px white;
     
+}
+
+.form input.button:hover {
+    background: #EBEBEB; 
+}
+.form input.button:active {
+    background: #D1D1D1; 
+    color: white;
 }
