@@ -1,9 +1,11 @@
 <?php
 
+$dsn = 'mysql:host=127.0.0.1;port=3309;dbname=form';
 $user = 'root';
 $pass = '1234';
-$pdo = new PDO('mysql:host=127.0.0.1;port=3307;dbname=test', $user, $pass);
-if ($pdo == false) {
-    echo 'Не удалось подключиться к базе данных!<br>';
-    exit();
+try {
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'Подключение не удалось: ' . $e->getMessage();
 }

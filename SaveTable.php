@@ -1,12 +1,13 @@
 <?php
-//require "includes/db.php";
+require "includes/db.php";
 
-/**
-$fields = ['first_name', 'middle_name', 'last_name', 'phone', 'email', 'comments', 'city'];
+$fields = ['last_name', 'first_name', 'middle_name', 'phone', 'email', 'city', 'comments'];
+$arrayJson = array_column((json_decode($_POST['json'])), 'value', 'name');
 $errors = [];
+
 foreach ($fields as $kye => $value) {
-    if (!empty($_POST[$value])) {
-        $params[$value] = htmlspecialchars(trim($_POST[$value]));
+    if (!empty($arrayJson[$value])) {
+        $params[$value] = htmlspecialchars(trim($arrayJson[$value]));
     } else {
         $errors[] = ['error' => 'Поле ' . $fields[$kye] . ' пустое'];
     }
@@ -20,8 +21,6 @@ if (!empty($errors)) {
     echo json_encode(['result' => 'ok'], JSON_UNESCAPED_UNICODE);
     http_response_code(200);
 }
-**/
-$text= var_export(json_decode($_POST['json']), true);
-$fp = fopen("file.txt", "w");
-fwrite($fp, $text);
-fclose($fp);
+
+
+
