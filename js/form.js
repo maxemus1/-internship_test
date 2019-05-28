@@ -6,6 +6,7 @@ $(document).ready(function () {
         }
     );
 });
+
 function sendAjaxForm(resultForm, contactForm, url) {
     var data = JSON.stringify($("#" + contactForm).serializeArray());
     $.ajax({
@@ -21,11 +22,12 @@ function sendAjaxForm(resultForm, contactForm, url) {
             }
         },
         error: function (data) { // Данные не отправлены
-            console.log(data.responseText.error);
-            if (data.result == 'Fail') {
-                $("#" + resultForm).html('Пустые поля');
-                $("#" + resultForm).html(data.errors);
-                $("#" + resultForm).html('Данные не отправлены.');
+            if (data.responseJSON.result == 'Fail') {
+                var error = new Array();
+                for (i = 0; i < data.responseJSON.errors.length; i++) {
+                    error[i] = Object.values(data.responseJSON.errors[i])+"\n";
+                }
+                $("#" + resultForm).html(error);
             }
         }
     });
